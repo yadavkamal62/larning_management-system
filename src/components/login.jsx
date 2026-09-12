@@ -19,17 +19,17 @@ const Login = () => {
   }
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-gradient-to-br from-emerald-950 via-slate-950 to-amber-950 px-6 py-12 [perspective:1000px]">
+    <main className="flex min-h-screen items-center justify-center bg-linear-to-br from-emerald-950 via-slate-950 to-amber-950 px-6 py-12 [perspective:1000px]">
       
       <div
-          className={`relative min-h-[560px] w-full max-w-md transition-transform duration-700 [transform-style:preserve-3d] ${
+          className={`relative min-h-[565px] w-full max-w-md transition-transform duration-700 [transform-style:preserve-3d] ${
           !isSignIn ? '[transform:rotateY(180deg)]' : ''
         }`}
       >
         
         <form
           onSubmit={handleSubmit}
-          className="min-h-[560px] w-full space-y-6 rounded-2xl border border-white/10 bg-slate-900/90 p-8 shadow-2xl backdrop-blur [backface-visibility:hidden]"
+          className="min-h-[565px] w-full space-y-6 rounded-2xl border border-white/10 bg-slate-900/90 p-8 shadow-2xl backdrop-blur [backface-visibility:hidden]"
         >
           <div className="space-y-2 text-center">
             <p className="text-sm font-medium uppercase tracking-[0.3em] text-cyan-400">
@@ -45,13 +45,13 @@ const Login = () => {
             {/* Username */}
             <div className="space-y-2">
               <label htmlFor="signin-username" className="text-sm font-medium text-slate-200">
-                Username
+              Email
               </label>
               <input
                 id="signin-username"
                 name="username"
                 type="text"
-                placeholder="Username"
+                placeholder="Email "
                 autoComplete="username"
                 required
                 className="w-full rounded-lg border border-slate-700 bg-slate-950 px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20"
@@ -119,13 +119,26 @@ const Login = () => {
         
             <div className="space-y-1">
               <label htmlFor="signup-name" className="text-sm font-medium text-slate-200">
-                Full Name
+                FirstName
               </label>
               <input
                 id="signup-name"
-                name="fullName"
+                name="FirstName"
                 type="text"
-                placeholder="John Doe"
+                placeholder="FirstName"
+                required
+                className="w-full rounded-lg border border-slate-700 bg-slate-950 px-4 py-2.5 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20"
+              />
+            </div>
+            <div className="space-y-1">
+              <label htmlFor="signup-name" className="text-sm font-medium text-slate-200">
+                LastName
+              </label>
+              <input
+                id="signup-LastName"
+                name="LastName"
+                type="text"
+                placeholder="LastName"
                 required
                 className="w-full rounded-lg border border-slate-700 bg-slate-950 px-4 py-2.5 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20"
               />
@@ -134,13 +147,13 @@ const Login = () => {
             
             <div className="space-y-1">
               <label htmlFor="signup-username" className="text-sm font-medium text-slate-200">
-                Username
+                Email
               </label>
               <input
-                id="signup-username"
-                name="username"
+                id="signup-Email"
+                name="Email"
                 type="text"
-                placeholder="Username"
+                placeholder="Email"
                 required
                 className="w-full rounded-lg border border-slate-700 bg-slate-950 px-4 py-2.5 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20"
               />
