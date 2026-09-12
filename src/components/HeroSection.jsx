@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import Footer from './Footer'
 
 const HeroSection = () => {
   const navigate = useNavigate()
@@ -9,7 +10,7 @@ const HeroSection = () => {
   return (
     <div className='relative flex min-h-screen flex-col  overflow-hidden bg-[radial-gradient(circle_at_center,#2c0b47_0%,#150424_40%,#08010f_75%,#000000_100%)] text-white'>
       <div>
-        <nav className='mx-4 mt-4 flex h-20 items-center justify-between rounded-full bg-white px-6 z-10'>
+        <nav className='mx-4 mt-4 flex h-20 items-center justify-between rounded-full bg-white/10 px-6 z-10'>
           <img src="/LOGO1.png" alt="Logo" className="h-15 w-15 rounded-full object-cover" />
           <div className="hidden items-center md:flex">
           <ul className='flex items-center cursor-pointer justify-center gap-10 pr-6 font-semibold text-red-500'>
@@ -87,6 +88,8 @@ const HeroSection = () => {
             />
         </div>
       </section>
+
+      <Footer/>
       </div>
     
   )
