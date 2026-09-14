@@ -32,7 +32,7 @@ const Header = () => {
     <Navbar fluid rounded className="bg-white shadow-lg ring-1 ring-red-200">
       <NavbarBrand href="">
         <img  />
-        <span className="self-center whitespace-nowrap text-xl font-semibold text-red-900">Education</span>
+        <span className="self-center whitespace-nowrap text-xl font-semibold text-red-900">FRND</span>
       </NavbarBrand>
       <div className="flex items-center gap-2 md:order-2">
         <Dropdown
