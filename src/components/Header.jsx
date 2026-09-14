@@ -17,12 +17,16 @@ import { LuLayoutDashboard } from "react-icons/lu";
 import { LiaSignOutAltSolid } from "react-icons/lia";
 import { FaUserAlt } from "react-icons/fa";
 import { IoHome } from "react-icons/io5"
+import { useSelector } from 'react-redux';
 // import { HiMiniAcademicCap } from "react-icons/hi2";
 // import { HiOutlineMenu } from "react-icons/hi";
 
 // import { IoSettingsSharp } from "react-icons/io5";
 
 const Header = () => {
+
+  const user =useSelector((store)=>store.user)
+  
   return (
     
      
@@ -34,10 +38,13 @@ const Header = () => {
         <img  />
         <span className="self-center whitespace-nowrap text-xl font-semibold text-red-900">FRND</span>
       </NavbarBrand>
-      <div className="flex items-center gap-2 md:order-2">
+     {user&& <div className="flex items-center gap-2 md:order-2">
+     <div className=' h-2 w-2 bg-green-800 rounded-full animate-pulse items-center'></div>
+     <p className='text-red-950  font-semibold'>welcome {user.firstName}</p>
         <Dropdown
           arrowIcon={false}
           inline
+          
           label={
             <Avatar alt="User settings" img="https://flowbite.com/docs/images/people/profile-picture-5.jpg" rounded />
           }
@@ -53,7 +60,7 @@ const Header = () => {
           <DropdownItem className='gap-3'> <LiaSignOutAltSolid />Sign out</DropdownItem>
         </Dropdown>
         <NavbarToggle className="rounded-lg border border-red-200 text-red-900 hover:bg-yellow-100 focus:ring-2 focus:ring-red-300 md:hidden" />
-      </div>
+      </div>}
       <div className="w-full md:order-1 md:w-auto">
          <NavbarCollapse className="mt-4 w-full rounded-xl border border-red-100 bg-yellow-50 p-2 shadow-inner md:mt-0 md:flex md:items-center md:gap-1 md:border-0 md:bg-transparent md:p-0 md:shadow-none">
         <NavbarLink href="#" className=" flex gap-2 rounded-lg px-4 py-3 text-red-900 hover:bg-yellow-100 hover:text-red-700 md:py-2">
