@@ -1,12 +1,17 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import { useDispatch } from 'react-redux'
+import { addUser } from '../utils/userSlice'
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false)
   const [isSignIn, setIsSignIn] = useState(true)
   const[email,setemail]=useState("py2005@gmail.com")
   const [password,setpassword]= useState("Poonam@2005")
+
+  const dispatch =useDispatch("")
+  const navigate =useNavigate()
 
   const toggleForm = () => {
     setIsSignIn((prev) => !prev)
@@ -24,11 +29,21 @@ const Login = () => {
 
   const handlelogin = async () => {
 
-    axios.post("http://localhost:5555/login",{
+ try{
+    const res =await axios.post("http://localhost:5555/login",{
       email,password,
       
     
   },{withCredentials:true})
+
+ 
+  dispatch(addUser(res.data));
+  navigate("/header")
+ }catch (err){
+
+  console.log(err)
+
+ }
   }
 
 
@@ -209,7 +224,7 @@ const Login = () => {
 
           <p
             className="cursor-pointer text-center text-sm text-slate-300 transition hover:text-white hover:underline"
-            
+            onClick={toggleForm}
           >
             Already registered? <span className="text-amber-400 font-medium">Sign In Now</span>
           </p>
