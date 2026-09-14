@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import Header from "./Header"
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false)
@@ -17,6 +19,10 @@ const Login = () => {
      
     }
   }
+ 
+    const navigate =useNavigate();
+
+  
 
   return (
     <main className="flex min-h-screen items-center justify-center bg-linear-to-br from-emerald-950 via-slate-950 to-amber-950 px-6 py-12 [perspective:1000px]">
@@ -88,7 +94,7 @@ const Login = () => {
           <button
             type="submit"
             className="w-full cursor-pointer rounded-full bg-amber-400 px-4 py-3 font-semibold text-amber-950 shadow-lg shadow-amber-950/30 transition hover:bg-amber-300 hover:shadow-amber-400/20 focus:outline-none focus:ring-2 focus:ring-amber-300 focus:ring-offset-2 focus:ring-offset-slate-900"
-          >
+        onClick={() => navigate('/Header')}  >
             Sign In
           </button>
 

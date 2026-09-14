@@ -4,10 +4,10 @@ const Footer = () => {
   return (
     
   
-    <footer className="border-t border-white/10bg-[radial-gradient(circle_at_center,#2c0b47_0%,#150424_40%,#08010f_75%,#000000_100%)] text-white sm:px-10 lg:px-16">
-      <div className="mx-auto grid max-w-7xl gap-10 sm:grid-cols-2 lg:grid-cols-4">
+    <footer className="border-t border-white/10 bg-red-950 px-6 py-10 text-center text-white sm:mb-5 sm:px-10 sm:text-left lg:px-16">
+      <div className="mx-auto   grid max-w-7xl gap-10 sm:grid-cols-2 lg:grid-cols-4">
         <div className="sm:col-span-2 lg:col-span-1">
-          <img src="/LOGO1.png" alt="Logo" className="mt-5 h-14 w-14 rounded-full object-cover" />
+          <img src="/LOGO1.png" alt="Logo" className="mx-auto mt-5 h-14 w-14 rounded-full object-cover sm:mx-0" />
           <h2 className="text-xl font-semibold">Learn without limits</h2>
           <p className="mt-3 max-w-xs text-sm leading-6 text-slate-400">
             Build practical skills with expert lessons and a community that helps you keep growing.
@@ -46,7 +46,7 @@ const Footer = () => {
       </div>
 
       <div className="mx-auto mt-10 max-w-7xl border-t border-white/10 pt-5 text-sm text-slate-500">
-        <p>© 2026 Learn without limits. All rights reserved.</p>
+        <p className="text-center sm:text-left">© 2026 Learn without limits. All rights reserved.</p>
       </div>
     </footer>
 )}

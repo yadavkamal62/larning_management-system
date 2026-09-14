@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Login from "./components/login"
 import Preloader from "./components/preloder"
 import HeroSection from "./components/HeroSection"
+import Header from "./components/Header"
 
 function App() {
 
@@ -19,10 +20,14 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={isLoading ? <Preloader /> : <HeroSection />} />
-        <Route path="/login" element={<Login />} />
-      </Routes>
+      <div className="min-h-screen bg-[radial-gradient(circle_at_center,#fb923c_0%,#db2777_40%,#4c0519_75%,#000000_100%)]
+">
+        <Routes>
+          <Route path="/" element={isLoading ? <Preloader /> : <HeroSection />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/header" element={<Header />} />
+        </Routes>
+      </div>
     </BrowserRouter>
   )
 }

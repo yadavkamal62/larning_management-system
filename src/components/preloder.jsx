@@ -35,7 +35,7 @@ const Preloader = () => {
                 {/* Brand / Title */}
                 <div className='text-center space-y-2'>
                     <h1 className='text-4xl md:text-5xl font-extrabold tracking-wider bg-linear-to-r from-red-600 via-red-500 to-purple-400 bg-clip-text text-transparent drop-shadow-lg'>
-                        Learning-Management-System
+                        Make friends
                     </h1>
                     <p className='text-xs uppercase tracking-[0.3em] text-gray-400 font-medium'>
                         Curating your experience
