@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import Header from "./Header"
+import axios from 'axios'
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false)
   const [isSignIn, setIsSignIn] = useState(true)
+  const[email,setemail]=useState("py2005@gmail.com")
+  const [password,setpassword]= useState("Poonam@2005")
 
   const toggleForm = () => {
     setIsSignIn((prev) => !prev)
@@ -14,25 +16,31 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     if (isSignIn) {
-      
+
     } else {
-     
+
     }
   }
- 
-    const navigate =useNavigate();
 
-  
+  const handlelogin = async () => {
+
+    axios.post("http://localhost:5555/login",{
+      email,password,
+      
+    
+  },{withCredentials:true})
+  }
+
+
 
   return (
     <main className="flex min-h-screen items-center justify-center bg-linear-to-br from-emerald-950 via-slate-950 to-amber-950 px-6 py-12 [perspective:1000px]">
-      
+
       <div
-          className={`relative min-h-[565px] w-full max-w-md transition-transform duration-700 [transform-style:preserve-3d] ${
-          !isSignIn ? '[transform:rotateY(180deg)]' : ''
-        }`}
+        className={`relative min-h-[565px] w-full max-w-md transition-transform duration-700 [transform-style:preserve-3d] ${!isSignIn ? '[transform:rotateY(180deg)]' : ''
+          }`}
       >
-        
+
         <form
           onSubmit={handleSubmit}
           className="min-h-[565px] w-full space-y-6 rounded-2xl border border-white/10 bg-slate-900/90 p-8 shadow-2xl backdrop-blur [backface-visibility:hidden]"
@@ -51,12 +59,13 @@ const Login = () => {
             {/* Username */}
             <div className="space-y-2">
               <label htmlFor="signin-username" className="text-sm font-medium text-slate-200">
-              Email
+                Email
               </label>
               <input
                 id="signin-username"
                 name="username"
                 type="text"
+                value={email}
                 placeholder="Email "
                 autoComplete="username"
                 required
@@ -72,6 +81,7 @@ const Login = () => {
               <div className="relative">
                 <input
                   id="signin-password"
+                  value={password}
                   name="password"
                   type={showPassword ? 'text' : 'password'}
                   placeholder="Password"
@@ -94,8 +104,8 @@ const Login = () => {
           <button
             type="submit"
             className="w-full cursor-pointer rounded-full bg-amber-400 px-4 py-3 font-semibold text-amber-950 shadow-lg shadow-amber-950/30 transition hover:bg-amber-300 hover:shadow-amber-400/20 focus:outline-none focus:ring-2 focus:ring-amber-300 focus:ring-offset-2 focus:ring-offset-slate-900"
-        onClick={() => navigate('/Header')}  >
-            Sign In
+            onClick={handlelogin}
+          > Sign In
           </button>
 
           <p
@@ -106,7 +116,7 @@ const Login = () => {
           </p>
         </form>
 
-        
+
         <form
           onSubmit={handleSubmit}
           className="absolute inset-0 min-h-[560px] w-full space-y-5 rounded-2xl border border-white/10 bg-slate-900/90 p-8 shadow-2xl backdrop-blur [backface-visibility:hidden] [transform:rotateY(180deg)]"
@@ -122,7 +132,7 @@ const Login = () => {
           </div>
 
           <div className="space-y-3">
-        
+
             <div className="space-y-1">
               <label htmlFor="signup-name" className="text-sm font-medium text-slate-200">
                 FirstName
@@ -150,7 +160,7 @@ const Login = () => {
               />
             </div>
 
-            
+
             <div className="space-y-1">
               <label htmlFor="signup-username" className="text-sm font-medium text-slate-200">
                 Email
@@ -165,7 +175,7 @@ const Login = () => {
               />
             </div>
 
-            
+
             <div className="space-y-1">
               <label htmlFor="signup-password" className="text-sm font-medium text-slate-200">
                 Password
@@ -199,7 +209,7 @@ const Login = () => {
 
           <p
             className="cursor-pointer text-center text-sm text-slate-300 transition hover:text-white hover:underline"
-            onClick={toggleForm}
+            
           >
             Already registered? <span className="text-amber-400 font-medium">Sign In Now</span>
           </p>
